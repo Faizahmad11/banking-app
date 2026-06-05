@@ -1,3 +1,5 @@
+const { UserModel } = require("../models/User.models");
+
 class AuthService{
   static loginUser(body){
     return{
@@ -6,8 +8,13 @@ class AuthService{
   }
   static async registerUser(body){
    const {name,email,password,ac_type} = body;
-   return{name,email,password,ac_type}
-  }
+     
+    const user = await UserModel.create({
+        name,email,password,ac_type
+    })
+
+
+   }
 }
 
 module.exports = AuthService;
