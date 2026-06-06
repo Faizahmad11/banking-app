@@ -1,2 +1,0 @@
-# Pak Banking App
-
