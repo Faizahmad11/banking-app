@@ -11,6 +11,23 @@ class AuthController {
     res.status(201).send(res_obj);
  }
 
+static async profileUser(req, res, next) {
+  try {
+
+    const res_obj =
+      await AuthService.profileUser(
+        req.user
+      );
+
+    res.status(200).json({
+      success: true,
+      data: res_obj,
+    });
+
+  } catch (error) {
+    next(error);
+  }
+}
 }
 
 module.exports = AuthController;
