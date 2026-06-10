@@ -13,7 +13,7 @@ const AuthMiddleware = (req, res, next) => {
         }
     
     const payload = JwtService.ValidateToken(token);
-    req.useer = payload.user;
+    req.user = payload.user;
     next();
     
     

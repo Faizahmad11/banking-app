@@ -12,6 +12,6 @@ router.route("/register")
     .post(AuthValidation.registerUser,ValidationMiddleware,AuthController.registerUser)
 
   router.route("/profile")
-  .post(AuthMiddleware,AuthController.profileUser);
+  .get(AuthMiddleware,AuthController.profileUser);
 
 module.exports = router;
